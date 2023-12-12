@@ -17,7 +17,7 @@ function ConfigurePage({ updateDashboardData }) {
   useEffect(() => {
     const fetchAllCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3002/api/categories');
+        const response = await axios.get('http://155.138.219.54:3002/api/categories');
         setAllCategories(response.data);
         
       } catch (error) {
@@ -52,7 +52,7 @@ function ConfigurePage({ updateDashboardData }) {
     };
 
     try {
-      const response = await axios.post('http://localhost:3002/api/configure-budget', budgetData);
+      const response = await axios.post('http://155.138.219.54:3002/api/configure-budget', budgetData);
       console.log(response.data);
 
       if (typeof updateDashboardData === 'function') {

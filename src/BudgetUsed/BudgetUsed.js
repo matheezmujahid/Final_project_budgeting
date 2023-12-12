@@ -14,7 +14,7 @@ const BudgetUsed = () => {
   }, []);
 
   const fetchUsedCategories = () => {
-    axios.get("http://localhost:3002/api/categories")
+    axios.get("http://155.138.219.54:3002/api/categories")
       .then((response) => {
         setUsedCategories(response.data);
         
@@ -40,7 +40,7 @@ const BudgetUsed = () => {
     };
 
     try {
-      await axios.post("http://localhost:3002/api/enter-used-budget", payload);
+      await axios.post("http://155.138.219.54:3002/api/enter-used-budget", payload);
       console.log("Used Budget update successful");
 
       

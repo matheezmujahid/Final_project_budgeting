@@ -62,7 +62,7 @@ function Dashboard() {
 
   const fetchData = (year, month, userId) => {
     axios
-      .get(`http://localhost:3002/api/get-budgets/${year}/${month}/${userId}`)
+      .get(`http://155.138.219.54:3002/api/get-budgets/${year}/${month}/${userId}`)
       .then((response) => {
         setBudgets(response.data);
       })
@@ -75,7 +75,7 @@ function Dashboard() {
     const storedUserId = localStorage.getItem("userId");
     axios
       .get(
-        `http://localhost:3002/api/get-table-data/${selectedYearTable}/${storedUserId}`
+        `http://155.138.219.54:3002/api/get-table-data/${selectedYearTable}/${storedUserId}`
       )
       .then((response) => {
         setTableData(response.data);
@@ -87,7 +87,7 @@ function Dashboard() {
 
   const fetchUsedCategories = () => {
     axios
-      .get("http://localhost:3002/api/categories")
+      .get("http://155.138.219.54:3002/api/categories")
       .then((response) => {
         setUsedCategories(response.data);
         // Assuming you want to select the first category by default
@@ -202,7 +202,7 @@ function Dashboard() {
     };
 
     try {
-      await axios.post("http://localhost:3002/api/enter-used-budget", payload);
+      await axios.post("http://155.138.219.54:3002/api/enter-used-budget", payload);
       console.log("Used Budget update successful");
       fetchData(selectedMonth, userId);
     } catch (error) {
