@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Budgeting APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an application for personal budget management built with React for the front end and Express with MySQL for the backend. The app enables users to manage their budget, featuring user authentication, configuration settings for allocated and used budgets, and visualization dashboards.
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+- [Available Scripts](#available-scripts)
+
+## Features
+
+- *About Page:* Provides a user-centric overview of the website.
+- *User Authentication:* Includes login and register pages for user authentication.
+- *Configuration Page:* Allows users to set allocated and used budgets.
+- *Dashboards:* Utilizes visualizations like bar graphs, pie charts, and tables for effective budget tracking.
+- *Logout:* Offers a secure logout mechanism.
+
+## Technologies Used
+
+Frontend:
+- React
+
+Backend:
+- Express.js
+- MySQL
+
+Other Technologies:
+- CORS
+- Body-parser
+- JWT (JSON Web Tokens)
+- Compression
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- MySQL database
+
+### Installation
+
+1. Clone the repository:
+
+    bash
+    git clone https://github.com/matheezmujahid/Final_project_budgeting
+    
+
+2. Install dependencies:
+
+    bash
+    cd NBADProject
+    npm install
+    
+
+### Configuration
+
+- Set up a MySQL database and configure the connection details in the backend.
+- Create a .env file in the backend directory and add the necessary environment variables.
+
+### Usage
+
+1. Start the backend server:
+
+    bash
+    cd nbadproject
+    node server.js
+    
+
+2. Start the React app:
+
+    bash
+    cd nbadproject
+    npm start
+    
+
+3. Open the app in your browser: 155.138.219.54:3000
+
+## API Endpoints
+
+- /api/login: User login endpoint.
+- /api/register: User registration endpoint.
+- /api/api/get-all-categories: Fetches all categories.
+- /api/configure-budget: Configures the budget.
+- /api/get-table-data: Retrieves table data.
+- /api/enter-used-budget: Logs the used budget.
+
+## Contributing
+
+Feel free to contribute to the project. Fork the repository, make changes, and submit a pull request.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- npm start: Runs the app in development mode. Open 155.138.219.54:3000 in your browser.
+- npm test: Launches the test runner in interactive watch mode.
+- npm run build: Builds the app for production in the build folder, optimizing it for performance.
