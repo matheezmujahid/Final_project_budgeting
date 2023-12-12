@@ -10,7 +10,7 @@ const app = express();
 
 
 
-const PORT = process.env.PORT || 3000; 
+const PORT = 3002; 
 const compression = require('compression'); 
 
 const dotenv = require('dotenv'); 
@@ -96,12 +96,6 @@ app.post('/api/login', (req, res) => {
     }
   });
 });
-
-
-
-
-
-
 
 
 
@@ -309,30 +303,6 @@ app.post('/api/enter-used-budget', (req, res) => {
   
 });
 
-//for deallocation
-// app.post('/api/deallocation-budget', (req, res) => {
-//   const { category, month, year, userId } = req.body;
-
-//   console.log('Received deallocation request:', req.body);
-//   db.query(
-//     'DELETE FROM budgets WHERE category = UPPER(?) AND month = ? AND year = ? AND userid = ?',
-//     [category, month, year, userId],
-//     (err, results) => {
-//       if (err) {
-//         console.error('MySQL query error:', err);
-//         res.status(500).send('Internal Server Error');
-//       } else {
-//         res.json(results);
-//         console.log('Deallocated budget successfully:', results);
-//       }
-//     }
-//   );
-// });
-
-
-
-
-
 // Add a new endpoint to get data for the line graph with a range of years
 
 app.get('/api/get-line-graph-data-range/:category/:startYear/:startMonth/:endYear/:endMonth/:userId', (req, res) => {
@@ -397,7 +367,7 @@ app.get("/user/validateToken", (req, res) => {
 			return res.send("Successfully Verified"); 
 		}else{ 
 			// Access Denied 
-			return res.status(401).send(error); 
+			return res.status(401).send(""); 
 		} 
 	} catch (error) { 
 		// Access Denied 

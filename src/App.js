@@ -8,6 +8,7 @@ import LoginPage from './LoginPage/LoginPage';
 import RegisterPage from './RegisterPage/RegisterPage';
 import Configuration from './Configuration/Configuration';
 import BudgetUsed from './BudgetUsed/BudgetUsed';
+
 function App() {
   return (
     <Router>
@@ -26,7 +27,7 @@ function App() {
           />
         </Routes>
       </div>
-      
+      <Footer />
     </Router>
   );
 }

@@ -1,8 +1,12 @@
 body {
-  margin: 0;
+  //margin: 0;
   font-family: 'Arial', sans-serif;
-  overflow-y: auto;
-  background-image:url('../../public/background.png'); ;
+  background-image:url('../../public/background1.png'); 
+  //overflow-y: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
 }
 
 
@@ -31,13 +35,13 @@ body {
 .chart-box {
   flex: 1;
   padding: 20px;
-  max-width: 400px;
+  max-width: 600px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 7px;
 }
 
 .onlychart {
-  width: 600px;
+  //width: 600px;
   height: 600px;
   display: flex;
   justify-content: space-around;
@@ -84,7 +88,7 @@ button:hover {
 
 /* Additional styles for the data block */
 .table-container {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: white;;
   padding: 20px;
   margin: 20px;
   border-radius: 8px;
@@ -144,12 +148,12 @@ button:hover {
 
 .chart-box {
   /* Existing styles... */
-  background-color: #fff; /* Set a solid background color */
+  background-color:white; /* Set a solid background color */
   opacity: 1; /* Set opacity to 1 to make it fully opaque */
 }
 
 .table-container {
   /* Existing styles... */
-  background-color: #fff; /* Set a solid background color */
+  background-color:white; /* Set a solid background color */
   opacity: 1; /* Set opacity to 1 to make it fully opaque */
 }

@@ -11,7 +11,7 @@ const RegisterPage = () => {
 
   const handleRegister = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/register', {
+      const response = await fetch('http://localhost:3002/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ const styles = {
     maxWidth: '400px',
     padding: '20px',
     boxShadow: '0 5px 10px rgba(0,0,0,0.2)',
-    backgroundColor: '#f8f8f8', 
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     borderRadius: '8px',
   },
   heading: {
@@ -108,7 +108,7 @@ const styles = {
   label: {
     fontSize: '16px',
     fontWeight: '500',
-    color: '#333',
+    color: 'white',
     marginBottom: '10px',
   },
   input: {

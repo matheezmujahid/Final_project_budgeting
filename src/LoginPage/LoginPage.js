@@ -9,7 +9,7 @@ const LoginPage = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/login", {
+      const response = await fetch("http://localhost:3002/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -67,12 +67,11 @@ const LoginPage = () => {
 
   const styles = {
     container: {
-      position: "relative",
       maxWidth: "400px",
       margin: "50px auto", // Center horizontally
       padding: "20px",
       boxShadow: "0 5px 10px rgba(0,0,0,0.2)",
-      backgroundColor: "#f0f0f0", // Light gray background
+      backgroundColor: 'rgba(0, 0, 0, 0.5)', // Light gray background
       borderRadius: "8px",
       textAlign: "center",
     },
@@ -102,7 +101,7 @@ const LoginPage = () => {
     label: {
       fontSize: "16px",
       fontWeight: "500",
-      color: "#333",
+      color: "white",
       marginBottom: "10px",
       textAlign: "left",
     },
@@ -119,7 +118,7 @@ const LoginPage = () => {
     },
     button: {
       color: "#fff",
-      backgroundColor: "#3498db", // Blue button color
+      backgroundColor: "green", // Blue button color
       borderRadius: "6px",
       padding: "12px",
       cursor: "pointer",
@@ -129,7 +128,7 @@ const LoginPage = () => {
       fontSize: "16px",
     },
     registerLink: {
-      color: "#e74c3c", // Red register link color
+      color: "blue", // Red register link color
       textDecoration: "none",
       fontSize: "14px",
       marginTop: "12px",
@@ -140,7 +139,7 @@ const LoginPage = () => {
   return (
     <div style={styles.container}>
       <div style={styles.backgroundImage}></div>
-      <h2 style={styles.heading}>Welcome Back!</h2>
+      <h2 style={styles.heading}>Welcome !</h2>
       <form style={styles.form}>
         <label style={styles.label}>
           Username
@@ -168,6 +167,7 @@ const LoginPage = () => {
       <Link to="/register" style={styles.registerLink}>
         New user? Register here
       </Link>
+      
     </div>
   );
 };

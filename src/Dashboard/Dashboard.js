@@ -62,7 +62,7 @@ function Dashboard() {
 
   const fetchData = (year, month, userId) => {
     axios
-      .get(`http://localhost:3000/api/get-budgets/${year}/${month}/${userId}`)
+      .get(`http://localhost:3002/api/get-budgets/${year}/${month}/${userId}`)
       .then((response) => {
         setBudgets(response.data);
       })
@@ -75,7 +75,7 @@ function Dashboard() {
     const storedUserId = localStorage.getItem("userId");
     axios
       .get(
-        `http://localhost:3000/api/get-table-data/${selectedYearTable}/${storedUserId}`
+        `http://localhost:3002/api/get-table-data/${selectedYearTable}/${storedUserId}`
       )
       .then((response) => {
         setTableData(response.data);
@@ -87,7 +87,7 @@ function Dashboard() {
 
   const fetchUsedCategories = () => {
     axios
-      .get("http://localhost:3000/api/categories")
+      .get("http://localhost:3002/api/categories")
       .then((response) => {
         setUsedCategories(response.data);
         // Assuming you want to select the first category by default
@@ -111,7 +111,7 @@ function Dashboard() {
       if (timeToExpire < 20000 && timeToExpire > 0) {
         // Show popup when token is about to expire in 20 seconds
         const extendSession = window.confirm(
-          "Your session is about to expire. Do you want to extend it?"
+          "Your session is expiring soon. Click ok to keep you login?"
         );
         if (extendSession) {
           const newExpirationTime = Date.now() + 60 * 1000; // Extend by 1 minute
@@ -202,7 +202,7 @@ function Dashboard() {
     };
 
     try {
-      await axios.post("http://localhost:3000/api/enter-used-budget", payload);
+      await axios.post("http://localhost:3002/api/enter-used-budget", payload);
       console.log("Used Budget update successful");
       fetchData(selectedMonth, userId);
     } catch (error) {
@@ -276,7 +276,7 @@ function Dashboard() {
 
           <div
             className="onlychart"
-            style={{ width: "800px", height: "410px", display: "flex" }}
+            style={{ width: "100%", height: "100%", display: "flex" }}
           >
             {/* Pie Chart */}
             <div
@@ -285,12 +285,17 @@ function Dashboard() {
             >
               <h2>Budget Allocation</h2>
               {budgets.length > 0 ? (
-                <Pie data={pieData} options={pieOptions} />
+                <Pie data={pieData} options={pieOptions} style={{height:'340px'}}/>
               ) : (
                 <p>No data available</p>
               )}
             </div>
-
+            </div>
+            <br/>
+            <div
+            className="onlychart"
+            style={{ width: "100%", height: "100%", display: "flex" }}
+          >
             {/* Bar Chart */}
             <div
               className="chart-box bar-chart-box"
@@ -298,12 +303,12 @@ function Dashboard() {
             >
               <h2>Budget Usage</h2>
               {budgets.length > 0 ? (
-                <Bar data={barData} />
+                <Bar data={barData} style={{backgroundColor:'white'}}/>
               ) : (
                 <p>No data available</p>
               )}
             </div>
-          </div>
+        </div>
           <br />
           <div
             className="tablecontent"
@@ -331,11 +336,10 @@ function Dashboard() {
                   onChange={(e) => setSelectedYearTable(e.target.value)}
                 />
               </label>
-              <button onClick={fetchTableData}>Get Table</button>
             </div>
 
             <div className="budget-table">
-              <h2>Budget Analysis Table for Year {selectedYearTable}</h2>
+              <h2>Budget Table for Year {selectedYearTable}</h2>
 
               <table className="table" style={{ width: "100%" }}>
                 <thead>

@@ -17,11 +17,9 @@ function ConfigurePage({ updateDashboardData }) {
   useEffect(() => {
     const fetchAllCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/categories');
+        const response = await axios.get('http://localhost:3002/api/categories');
         setAllCategories(response.data);
-        const storedUserId = localStorage.getItem("userId");
-
-        fetchDelocatedCategories(selectedYearDeallocation, selectedMonthDeallocation, storedUserId);
+        
       } catch (error) {
         console.error('Error fetching categories:', error);
       }
@@ -29,17 +27,6 @@ function ConfigurePage({ updateDashboardData }) {
 
     fetchAllCategories();
   }, []);
-
-  const fetchDelocatedCategories = (year, month, userId) => {
-    axios
-      .get(`http://localhost:3000/api/get-budgets/${year}/${month}/${userId}`)
-      .then((response) => {
-        
-      })
-      .catch((error) => {
-        console.error("Error fetching budgets:", error);
-      });
-  };
 
   const handleAllocationSubmit = async (e) => {
     e.preventDefault();
@@ -65,7 +52,7 @@ function ConfigurePage({ updateDashboardData }) {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/api/configure-budget', budgetData);
+      const response = await axios.post('http://localhost:3002/api/configure-budget', budgetData);
       console.log(response.data);
 
       if (typeof updateDashboardData === 'function') {
@@ -82,13 +69,14 @@ function ConfigurePage({ updateDashboardData }) {
  
   // Array of all months
   const months = [
+    'None',
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
 
   return (
     <div className="configurationcontent">
-      <h2 style={{ textAlign: 'center', marginBottom: '20px',color: 'white' }}>Configure Budget</h2>
+      <h2 style={{ textAlign: 'left', marginBottom: '20px',color: 'white' }}>Configure Budget</h2>
       <div style={{ display: 'flex', justifyContent: 'space-between',backgroundColor:'white',width:'50%' }}>
         {/* Allocation Form */}
         <form style={{ width: '100%', padding: '20px', backgroundColor:'cream',border: '1px solid #ccc', borderRadius: '8px' }} onSubmit={handleAllocationSubmit}>
